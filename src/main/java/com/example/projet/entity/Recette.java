@@ -9,14 +9,14 @@ public class Recette {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
     @Column(unique = false)
-private String ingredients;
-    private Integer temps;
+    private String name;
+    private String description;
     private Integer nombre;
 
-    public Recette(Integer id, String ingredients, Integer temps, Integer nombre) {
+    public Recette(Integer id, String name, String ingredients, String description, Integer nombre) {
         Id = id;
-        this.ingredients = ingredients;
-        this.temps = temps;
+        this.name = name;
+        this.description = description;
         this.nombre = nombre;
     }
 
@@ -31,20 +31,21 @@ private String ingredients;
         Id = id;
     }
 
-    public String getIngredients() {
-        return ingredients;
+    public String getName() {
+        return name;
     }
 
-    public void setIngredients(String ingredients) {
-        this.ingredients = ingredients;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Integer getTemps() {
-        return temps;
+
+    public String getDescription() {
+        return description;
     }
 
-    public void setTemps(Integer temps) {
-        this.temps = temps;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Integer getNombre() {
@@ -59,12 +60,13 @@ private String ingredients;
     public String toString() {
         return "Recette{" +
                 "Id=" + Id +
-                ", ingredients='" + ingredients + '\'' +
-                ", temps=" + temps +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
                 ", nombre=" + nombre +
                 '}';
     }
 }
+
 
 
 
